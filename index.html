@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Arco Iris</title>
+    <style>
+        /* Colores del arco iris */
+        .red { color: red; }
+        .orange { color: orange; }
+        .yellow { color: yellow; }
+        .green { color: green; }
+        .blue { color: blue; }
+        .indigo { color: indigo; }
+        .violet { color: violet; }
+
+        /* Estilo para volver al color negro */
+        p {
+            color: black;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <p class="red">Roig (Valencià) - Red (English) - Rojo (Castellano)</p>
+    <p class="orange">Taronja (Valencià) - Orange (English) - Naranja (Castellano)</p>
+    <p class="yellow">Groc (Valencià) - Yellow (English) - Amarillo (Castellano)</p>
+    <p class="green">Verd (Valencià) - Green (English) - Verde (Castellano)</p>
+    <p class="blue">Blau (Valencià) - Blue (English) - Azul (Castellano)</p>
+    <p class="indigo">Indigo (Valencià) - Indigo (English) - Índigo (Castellano)</p>
+    <p class="violet">Violeta (Valencià) - Violet (English) - Violeta (Castellano)</p>
+
+    <script>
+        // Obtener todos los párrafos
+        const parrafos = document.querySelectorAll('p');
+
+        // Añadir eventos a cada párrafo
+        parrafos.forEach(parrafo => {
+            const originalColor = parrafo.style.color;
+
+            // Al pasar el ratón por encima, se aplica el color de la clase
+            parrafo.addEventListener('mouseover', function() {
+                parrafo.style.color = parrafo.className;
+            });
+
+            // Al salir el ratón, vuelve al color negro
+            parrafo.addEventListener('mouseout', function() {
+                parrafo.style.color = 'black';
+            });
+        });
+    </script>
+</body>
+</html>
